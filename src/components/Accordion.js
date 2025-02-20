@@ -2,13 +2,24 @@ import { useState } from 'react';   // Import the useState hook from React
 
 // Create an Accordion component
 function Accordion({ items }) {
-    const [expandedIndex, setExpandedIndex] = useState(-1); // Initialize the state with null
+    const [expandedIndex, setExpandedIndex] = useState(-1); // Initialize the state with -1
+
+    const handleClicked = (nextIndex) => {  // Create a function to handle the click event
+        setExpandedIndex((currentExpandedIndex) => { // Set the expanded index to the next index
+            if (currentExpandedIndex === nextIndex) {  // Check if the current index is the same as the next index
+                return-1;  // Set the expanded index to -1
+            } else {
+                return nextIndex;  // Return the next index
+            }
+        });
+
+    };
 
     const renderedItems = items.map((item, index) => {  // Map over the items
        const isExpanded = index === expandedIndex; // Check if the item is expanded
 
-       const icon = <span>   {/* Create a span element for the icon */}
-        {isExpanded ? '🔽' : '🔼'}                
+       const icon = <span className="text-2xl">   {/* Create a span element for the icon */}
+        {isExpanded ? '🔽' : '🔼'}                   
        </span>   
 
         return (

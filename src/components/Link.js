@@ -1,18 +1,26 @@
-import { useContext } from "react";
-import NavigationContext from "../context/navigation";
+import classNames from "classnames";
+import useNavigation from "../hooks/use-navigation";
 
-function Link({ to, children }) {
-    const { navigate } = useContext(NavigationContext);
+function Link({ to, children, className, activeClassName }) {
+    const { navigate, currentPath } = useNavigation();  // Destructure the navigate function from the context
+   
+    const classes = classNames(
+        'text-blue-500', 
+        className,
+        currentPath === to && activeClassName
+    );  // Create a class name using the classNames function
 
+    // Create a handleClick function that prevents the default behavior of the anchor element and calls the navigate function
     const handleClick = (event) => {
+        if (event.metaKey || event.ctrlKey) {
+            return;
+        }
         event.preventDefault();
 
         navigate(to);
-        // window.history.pushState({}, "", to);
-        // window.dispatchEvent(new PopStateEvent("popstate"));
     };
 
-    return <a onClick={handleClick}>{children}</a>
+    return <a className={classes} href={"to"} onClick={handleClick}>{children}</a>  // Add an onClick event to the anchor element
 };
 
 

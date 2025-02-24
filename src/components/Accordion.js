@@ -1,4 +1,5 @@
 import { useState } from 'react';   // Import the useState hook from React
+import { GoChevronDown, GoChevronUp  } from "react-icons/go";
 
 // Create an Accordion component
 function Accordion({ items }) {
@@ -19,7 +20,7 @@ function Accordion({ items }) {
        const isExpanded = index === expandedIndex; // Check if the item is expanded
 
        const icon = <span className="text-2xl">   {/* Create a span element for the icon */}
-        {isExpanded ? '🔽' : '🔼'}                   
+        {isExpanded ? <GoChevronDown/> : <GoChevronUp />}  {/* Render the chevron icon based on the expanded state */}       
        </span>   
 
         return (

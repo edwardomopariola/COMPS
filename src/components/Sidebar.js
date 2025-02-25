@@ -1,11 +1,13 @@
 import classNames from "classnames";
 import Link from "./Link";
 
+// Create a Sidebar component that renders a list of links
 function Sidebar() {
     const links = [
         { label: "Accordion", path: '/accordion' },
         { label: "Dropdown", path: '/' },
         {label: 'Buttons', path: '/buttons'},
+        {label: 'Modal', path: '/modal  '},
     ];
 
     // Render the links using the map function

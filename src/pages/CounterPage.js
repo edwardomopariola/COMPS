@@ -1,23 +1,16 @@
-import { useState, useEffect } from 'react';
 import Button from '../components/Button';
+import useCounter from '../hooks/use-counter';
 
+
+// The CounterPage component imports the useCounter hook and uses it to manage the count state and increment function.
+// The count state is displayed in a paragraph element, and the increment function is called when the button is clicked.
 function CounterPage({ initialCount }) {
-    const [count, setCount] = useState(initialCount);
+    const { count, increment } = useCounter();
    
-
-    // useEffect hook that logs a message to the console whenever the count state changes 
-    useEffect(() => {
-        console.log(`You clicked count ${count} times`);
-    }, [count]);
-
-    const handleClick = () => {
-        setCount(count + 1);
-    };
-
     return (
         <div>
             <p>You clicked {count} times</p>
-            <Button onClick={handleClick}>
+            <Button onClick={increment}>
                Increment
             </Button>
         </div>

@@ -8,7 +8,7 @@ function ButtonPage() {
     return(
         <div>
             <div>
-                <h1>App!!!</h1>
+                <h1 className="text-green-500">App!!!</h1>
             </div>
 
             <div>
@@ -20,7 +20,7 @@ function ButtonPage() {
             </div>
 
             <div>
-                <Button danger="true" onClick={handleClick}> 
+                <Button rounded danger="true" onClick={handleClick}> 
                     {/* adding a react icon */}
                     <GoBell className="mr-2.5" />
                     Click Me!!!
@@ -28,7 +28,7 @@ function ButtonPage() {
             </div>
 
             <div>
-                <Button secondry="true" onClick={handleClick}> 
+                <Button outline rounded secondry="true" onClick={handleClick}> 
                     {/* adding a react icon */}
                     <GoCloudDownload  className="mr-2.5"/>
                     Now!!
@@ -36,7 +36,7 @@ function ButtonPage() {
             </div>
 
             <div>
-                <Button warning="true" onClick={handleClick}> 
+                <Button rounded warning="true" onClick={handleClick}> 
                     {/* add a react icon */}
                     <GoDatabase  className="mr-2.5"/> 
                     See Deal!
@@ -44,7 +44,7 @@ function ButtonPage() {
             </div>
 
             <div>
-                <Button success="true" onClick={handleClick}>
+                <Button rounded success="true" onClick={handleClick}>
                 {/* add a react icon */}
                 <GoDatabase  className="mr-2.5"/> 
                 Hide ads

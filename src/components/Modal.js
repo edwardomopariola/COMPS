@@ -3,14 +3,17 @@ import { useEffect } from 'react';
 
 function Modal({ onClose, children, actionBar }) {
     useEffect(() => {
+        // Add the overflow-hidden class to the body element when the modal is open
         document.body.classList.add('overflow-hidden');
 
         return () => {
+            // Remove the overflow-hidden class from the body element when the modal is closed
             document.body.classList.remove('overflow-hidden');
         };
        
     }, []);
 
+    // Create a portal to render the modal in the modal-container div in the index.html file 
     return ReactDOM.createPortal(
         <div>
             <div onClick={onClose} className="fixed inset-0 bg-gray-300 opacity-80"></div>

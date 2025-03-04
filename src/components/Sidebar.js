@@ -6,8 +6,9 @@ function Sidebar() {
     const links = [
         { label: "Accordion", path: '/accordion' },
         { label: "Dropdown", path: '/' },
-        {label: 'Buttons', path: '/buttons'},
-        {label: 'Modal', path: '/modal  '},
+        {label: 'Buttons', path: '/buttons' },
+        {label: 'Modal', path: '/modal' },
+        {label: 'Table', path: '/table' },
     ];
 
     // Render the links using the map function
@@ -19,7 +20,8 @@ function Sidebar() {
                 className="mb-3"
                 activeClassName="font-bold border-l-4 border-blue-500 pl-2"
             >
-            {link.label} </Link>
+                {link.label} 
+            </Link>
         );
     });
 

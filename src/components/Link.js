@@ -4,12 +4,13 @@ import useNavigation from "../hooks/use-navigation";
 function Link({ to, children, className, activeClassName }) {
     const { navigate, currentPath } = useNavigation();  // Destructure the navigate function from the context
    
+    // Create a classes variable that conditionally applies the activeClassName
     const classes = classNames(
         'text-blue-500', 
         className,
         currentPath === to && activeClassName
-    );  // Create a class name using the classNames function
-
+    );  
+    
     // Create a handleClick function that prevents the default behavior of the anchor element and calls the navigate function
     const handleClick = (event) => {
         if (event.metaKey || event.ctrlKey) {

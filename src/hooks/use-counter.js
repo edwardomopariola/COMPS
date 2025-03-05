@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 
 // Custom hook that takes an initial count and returns the count state and an increment function
-function useCounter(initialCount = 0) {
+function useCounter(initialCount = 10) {
     const [count, setCount] = useState(initialCount);
    
 
